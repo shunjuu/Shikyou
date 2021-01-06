@@ -6,10 +6,10 @@ setup(
     author='Kyrielight',
     packages=['shikyou'],
     install_requires=[
-        "ayumi @ git+https://github.com/shunjuu/Ayumi",
-        "metsuke @ git+https://github.com/shunjuu/Metsuke",
+        "ayumi @ git+git://github.com/shunjuu/Ayumi@master#egg=ayumi",
+        "metsuke @ git+git://github.com/shunjuu/Metsuke@master#egg=metsuke",
     ],
     version='0.1',
     license='MIT',
-    description='Specialized rclone instruciton caller.'
+    description='Specialized rclone instruction caller.'
 )

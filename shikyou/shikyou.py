@@ -116,14 +116,14 @@ def upload(job: Job, destinations: List[str], upload_file: str, config: str, fla
     e.g., 'temp.mp4' --> destination/show/episode.mp4
     """
 
-    Ayumi.info("Now starting upload.", color=Ayumi.LCYAN)
-
     for dest in destinations:
-        Ayumi.info("Now uploading file to {}".format(dest))
 
         rclone_dest = "{}/{}/{}".format(_clean(dest), job.show, job.episode)
         command = ["rclone", "--config={}".format(config), "copyto", upload_file, rclone_dest]
         command.extend(flags.split())
+
+        Ayumi.debug("Now running command: {}".format(" ".join(command)))
+        Ayumi.info("Now uploading file to {}".format(dest))
 
         try:
             _run(command)
