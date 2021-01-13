@@ -45,7 +45,7 @@ def _check_exists(config: str, source: str, job: Job) -> bool:
         response = _run(["rclone",
                         "--config={}".format(config),
                         "lsjson", "-R",
-                        "'{}'/'{}'/".format(source, job.show)])
+                        "{}/{}/".format(source, job.show)])
         episode_list = loads(response.stdout.decode('utf-8'))
         for episode in episode_list:
             Ayumi.debug("Checking {} against episode {}".format(job.episode, episode['Name']))
