@@ -119,7 +119,7 @@ def upload(job: Job, destinations: List[str], upload_file: str, config: str, fla
     for dest in destinations:
 
         rclone_dest = "'{}'/'{}'/'{}'".format(_clean(dest), job.show, job.episode)
-        command = ["rclone", "--config={}".format(config), "copyto", '{}'.format(upload_file), rclone_dest]
+        command = ["rclone", "--config={}".format(config), "copyto", "'{}'".format(upload_file), rclone_dest]
         command.extend(flags.split())
 
         Ayumi.debug("Now running command: {}".format(" ".join(command)))
