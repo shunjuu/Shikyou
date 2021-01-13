@@ -74,9 +74,9 @@ def download(job: Job, sources: List[str], tempfolder: str, config: str, flags: 
         if _check_exists(config, source, job):
             Ayumi.info("Now downloading episode from source: {}".format(source))
 
-            src_file = "'{}'/'{}'/'{}'".format(_clean(source), job.show, job.episode)
+            src_file = "{}/{}/{}".format(_clean(source), job.show, job.episode)
             Ayumi.debug("Sourcing from rclone path: {}".format(src_file))
-            dest_file = "'{}'/'{}'".format(_clean(tempfolder), "temp")
+            dest_file = "{}/{}".format(_clean(tempfolder), "temp")
             Ayumi.debug("Downloading to destination: {}".format(dest_file))
 
 
@@ -118,8 +118,8 @@ def upload(job: Job, destinations: List[str], upload_file: str, config: str, fla
 
     for dest in destinations:
 
-        rclone_dest = "'{}'/'{}'/'{}'".format(_clean(dest), job.show, job.episode)
-        command = ["rclone", "--config={}".format(config), "copyto", "'{}'".format(upload_file), rclone_dest]
+        rclone_dest = "{}/{}/{}".format(_clean(dest), job.show, job.episode)
+        command = ["rclone", "--config={}".format(config), "copyto", upload_file, rclone_dest]
         command.extend(flags.split())
 
         Ayumi.debug("Now running command: {}".format(" ".join(command)))
