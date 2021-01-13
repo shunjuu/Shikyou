@@ -9,7 +9,7 @@ setup(
         "ayumi @ git+git://github.com/shunjuu/Ayumi@master#egg=ayumi",
         "metsuke @ git+git://github.com/shunjuu/Metsuke@master#egg=metsuke",
     ],
-    version='0.1',
+    version='0.2',
     license='MIT',
     description='Specialized rclone instruction caller.'
 )
