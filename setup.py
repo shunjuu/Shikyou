@@ -6,8 +6,8 @@ setup(
     author='Kyrielight',
     packages=['shikyou'],
     install_requires=[
-        "ayumi @ git+git://github.com/shunjuu/Ayumi@master#egg=ayumi",
-        "metsuke @ git+git://github.com/shunjuu/Metsuke@master#egg=metsuke",
+        "ayumi @ git+https://github.com/shunjuu/Ayumi@master#egg=ayumi",
+        "metsuke @ git+https://github.com/shunjuu/Metsuke@master#egg=metsuke",
     ],
     version='0.2',
     license='MIT',
